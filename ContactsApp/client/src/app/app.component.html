@@ -1,0 +1,18 @@
+<nav>
+  <ul>
+    <li><a routerLink="/">Contacts</a></li>
+    <ng-container *ngIf="!((this.user$ | async)?.isLogged)">
+      <li><a routerLink="/login">Login</a></li>
+      <li><a routerLink="/register">Register</a></li>
+    </ng-container>
+  </ul>
+</nav>
+
+<ng-container *ngIf="(this.user$ | async)?.isLogged">
+  <p>{{(this.user$ | async)?.username}}</p>
+  <button (click)="logout()">Logout</button>
+</ng-container>
+
+<ng-template #loading>Loading...</ng-template>
+
+<router-outlet></router-outlet>

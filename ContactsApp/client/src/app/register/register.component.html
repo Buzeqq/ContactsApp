@@ -1,0 +1,7 @@
+<h2>Register Form</h2>
+<form #form="ngForm" (ngSubmit)="register(form)">
+  <input name="username" ngModel required>
+  <input name="password" ngModel required type="password">
+  <input name="confirmPassword" ngModel required type="password">
+  <button>Register</button>
+</form>
