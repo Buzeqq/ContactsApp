@@ -15,6 +15,7 @@ export class RegisterComponent {
 
   register(form: NgForm) {
     this.registerForm = form.form.value;
+    console.log(this.registerForm);
     this.authService.register(this.registerForm).subscribe();
   }
 }

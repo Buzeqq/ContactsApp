@@ -37,7 +37,9 @@ public class AuthenticationController : ControllerBase
         {
             return Results.BadRequest();
         }
-
+        
+        Console.WriteLine(form.Username);
+        Console.WriteLine(form.Password);
         var user = new IdentityUser { UserName = form.Username };
         var createUserResult = await userManager.CreateAsync(user, form.Password);
         if (!createUserResult.Succeeded)

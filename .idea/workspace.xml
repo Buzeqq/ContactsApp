@@ -5,31 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="728454b3-bbe2-4ba0-ba12-7bb29e5ead0a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ContactsApp/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Controllers/CategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/Controllers/ContactsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Controllers/ContactsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/Dto/Contact/PostContactsDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Dto/Contact/PostContactsDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/Repository/Category/CategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Repository/Category/CategoryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/Repository/Category/ICategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Repository/Category/ICategoryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/Repository/Contact/ContactRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Repository/Contact/ContactRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/Services/Category/CategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Services/Category/CategoryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/Services/Category/ICategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Services/Category/ICategoryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/contact-detail/contact-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/contact-detail/contact-detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/contacts.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/contacts.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/contacts/contacts.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/contacts/contacts.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/contacts/contacts.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/contacts/contacts.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/login/login.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/register/register.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/register/register.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/register/register.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/Controllers/AuthenticationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Controllers/AuthenticationController.cs" afterDir="false" />
     </list>
     <list id="c9dc36a6-8e74-48b0-b336-46889a43e5bc" name="Changes by mate" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +50,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680036687216</updated>
-      <workItem from="1680036688148" duration="3051000" />
+      <workItem from="1680036688148" duration="3651000" />
     </task>
     <servers />
   </component>
