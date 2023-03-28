@@ -33,7 +33,7 @@ public class CategoryRepository: ICategoryRepository, IDisposable
         return _dbContext.Categories.Find(categoryId);
     }
 
-    public Category? GetCategoryByNameAndSubCategoryName(string name, string subCategoryName)
+    public Category? GetCategoryByNameAndSubCategoryName(string name, string? subCategoryName)
     {
         return _dbContext.Categories
             .FirstOrDefault(category => category.Name == name && category.SubCategoryName == subCategoryName);

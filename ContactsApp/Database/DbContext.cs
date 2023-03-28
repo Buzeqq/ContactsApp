@@ -24,7 +24,7 @@ public class DbContext : IdentityDbContext<IdentityUser>
 
         builder.Entity<Category>()
             .HasData(
-                new Category { Id = 1, Name = "private" }, 
+                new Category { Id = 1, Name = "private", SubCategoryName = "" }, 
                 new Category { Id = 2, Name = "other" }, 
                 new Category { Id = 3, Name = "business", SubCategoryName = "boss" }, 
                 new Category { Id = 4, Name = "business", SubCategoryName = "manager" }, 

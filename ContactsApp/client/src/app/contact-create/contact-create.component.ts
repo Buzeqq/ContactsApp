@@ -47,12 +47,9 @@ export class ContactCreateComponent {
 
   createNewSubCategory($event: MatChipInputEvent) {
     const value = $event.value.trim();
-    console.log(value);
     if (!value) return;
 
-    if (value) {
-      this.categoryService.createSubcategory('other', value).subscribe();
-    }
+    this.categoryService.createSubcategory('other', value).subscribe();
 
     this.setSelectedSubCategory(value);
   }

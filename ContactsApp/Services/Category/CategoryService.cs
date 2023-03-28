@@ -27,7 +27,7 @@ public class CategoryService: ICategoryService
         return _repository.GetAllCategories();
     }
 
-    public Category GetCategory(string name, string subCategoryName)
+    public Category GetCategory(string name, string? subCategoryName)
     {
         var category = _repository.GetCategoryByNameAndSubCategoryName(name, subCategoryName);
         if (category == null) throw new Exception();

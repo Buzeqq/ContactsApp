@@ -10,7 +10,7 @@ public interface ICategoryService
 
        IAsyncEnumerable<Category> GetAllCategories();
 
-       Category GetCategory(string name, string subCategoryName);
+       Category GetCategory(string name, string? subCategoryName);
 
        Category GetCategory(int id);
        Category CreateCategory(Category category);

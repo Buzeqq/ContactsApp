@@ -35,9 +35,10 @@ public class ContactsController
     public IResult CreateContact(PostContactsDto contact)
     {
         Contact newContact;
+        
         try
         {
-            var category = _categoryService.GetCategory(contact.Category, contact.Subcategory);
+            var category = _categoryService.GetCategory(contact.Category, contact.Subcategory == "" ? null : contact.Subcategory);
             var mappedContact = PostContactsDto.Mapper(contact, category);
             mappedContact.Password = _passwordHasher.HashPassword(mappedContact, mappedContact.Password);
             newContact = _contactService.CreateContact(mappedContact);

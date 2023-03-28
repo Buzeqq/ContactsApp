@@ -12,7 +12,7 @@ public class PostContactsDto
     
     public string Category { get; set; }
     
-    public string Subcategory { get; set; }
+    public string? Subcategory { get; set; }
     public string BirthDay { get; set; }
 
     public static Models.Contact Mapper(PostContactsDto contact, Models.Category category)
