@@ -2,6 +2,7 @@ using ContactsApp.Dto.Contact;
 using ContactsApp.Models;
 using ContactsApp.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContactsApp.Controllers;
@@ -11,11 +12,13 @@ public class ContactsController
 {
     private readonly IContactService _contactService;
     private readonly ICategoryService _categoryService;
+    private readonly PasswordHasher<Contact> _passwordHasher;
 
     public ContactsController(IContactService contactService, ICategoryService categoryService)
     {
         _contactService = contactService;
         _categoryService = categoryService;
+        _passwordHasher = new PasswordHasher<Contact>();
     }
     
     [HttpGet("/api/contacts")]
@@ -26,7 +29,8 @@ public class ContactsController
             yield return GetContactsDto.Mapper(contact);
         }
     }
-
+    
+    [Authorize]
     [HttpPost("/api/contacts")]
     public IResult CreateContact(PostContactsDto contact)
     {
@@ -34,7 +38,9 @@ public class ContactsController
         try
         {
             var category = _categoryService.GetCategory(contact.Category, contact.Subcategory);
-            newContact = _contactService.CreateContact(PostContactsDto.Mapper(contact, category));
+            var mappedContact = PostContactsDto.Mapper(contact, category);
+            mappedContact.Password = _passwordHasher.HashPassword(mappedContact, mappedContact.Password);
+            newContact = _contactService.CreateContact(mappedContact);
         }
         catch
         {
@@ -44,7 +50,6 @@ public class ContactsController
         return Results.Created("/api/contacts", newContact.Id);
     }
     
-    [Authorize]
     [HttpGet("/api/contacts/{id:int}")]
     public IResult GetContact(int id)
     {
@@ -59,5 +64,13 @@ public class ContactsController
         }
         
         return Results.Ok(GetContactDto.Mapper(contact));
+    }
+    
+    [Authorize]
+    [HttpDelete("/api/contacts/{id:int}")]
+    public IResult DeleteContact(int id)
+    {
+        _contactService.DeleteContact(id);
+        return Results.Ok();
     }
 }

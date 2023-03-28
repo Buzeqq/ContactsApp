@@ -37,12 +37,25 @@ public class CategoryController
         try
         {
             category = _service.GetCategory(id);
+            return Results.Ok(GetCategoryDto.Mapper(category));
         }
         catch (Exception)
         {
             return Results.NotFound();
         }
+    }
 
-        return Results.Ok(GetCategoryDto.Mapper(category));
+    [HttpPost("/api/categories/{name}")]
+    public IResult CreateCategory(string name, [FromBody] CreateCategoryDto subcategory)
+    {
+        if (name != "other")
+        {
+            return Results.NotFound();
+        }
+        
+        var category = _service.CreateCategory(CreateCategoryDto.Mapper(subcategory));
+        return Results.Created("/api/categories/", category.Id);
     }
 }
+
+

@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace ContactsApp.Dto.Contact;
 
 public class PostContactsDto
@@ -11,7 +13,7 @@ public class PostContactsDto
     public string Category { get; set; }
     
     public string Subcategory { get; set; }
-    public DateTime BirthDay { get; set; }
+    public string BirthDay { get; set; }
 
     public static Models.Contact Mapper(PostContactsDto contact, Models.Category category)
     {
@@ -21,7 +23,7 @@ public class PostContactsDto
             Email = contact.Email,
             PhoneNumber = contact.PhoneNumber,
             Password = contact.Password,
-            BirthDay = contact.BirthDay,
+            BirthDay = DateTime.ParseExact(contact.BirthDay, "yyyy-MM-dd", new DateTimeFormatInfo()).ToUniversalTime(),
             Category = category
         };
     }

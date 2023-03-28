@@ -39,10 +39,11 @@ public class CategoryRepository: ICategoryRepository, IDisposable
             .FirstOrDefault(category => category.Name == name && category.SubCategoryName == subCategoryName);
     }
 
-    public void CreateCategory(Category newCategory)
+    public Category CreateCategory(Category newCategory)
     {
-        _dbContext.Categories.Add(newCategory);
+        var category = _dbContext.Categories.Add(newCategory);
         _dbContext.SaveChanges();
+        return category.Entity;
     }
 
     public void DeleteCategory(Category category)

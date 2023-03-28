@@ -11,7 +11,7 @@ public interface ICategoryRepository
 
     Category? GetCategoryById(int categoryId);
     Category? GetCategoryByNameAndSubCategoryName(string name, string subCategoryName);
-    void CreateCategory(Category category);
+    Category CreateCategory(Category category);
     void DeleteCategory(Category category);
     void UpdateCategory(Category category);
 

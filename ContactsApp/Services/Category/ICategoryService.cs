@@ -13,7 +13,7 @@ public interface ICategoryService
        Category GetCategory(string name, string subCategoryName);
 
        Category GetCategory(int id);
-       void CreateCategory(Category category);
+       Category CreateCategory(Category category);
        void DeleteCategory(int id);
        void UpdateCategory(Category category);
        

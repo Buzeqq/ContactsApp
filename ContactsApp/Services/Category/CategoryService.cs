@@ -43,14 +43,14 @@ public class CategoryService: ICategoryService
         return category;
     }
 
-    public void CreateCategory(Category category)
+    public Category CreateCategory(Category category)
     {
         if (_repository.Exists(category))
         {
             throw new CategoryNotUniqueException(category);
         }
         
-        _repository.CreateCategory(category);
+        return _repository.CreateCategory(category);
     }
 
     public void DeleteCategory(int id)

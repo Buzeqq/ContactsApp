@@ -1,0 +1,68 @@
+<h2>Add contact</h2>
+
+<form #form="ngForm" (ngSubmit)="create(form)" (keydown.enter)="$event.preventDefault()">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput name="name" ngModel required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Surname</mat-label>
+    <input matInput name="surname" ngModel required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput name="email" ngModel type="email" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput name="password" ngModel type="password" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Birthday</mat-label>
+    <input matInput name="birthday" ngModel type="date" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Phone number</mat-label>
+    <input matInput name="phoneNumber" ngModel type="tel" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Category</mat-label>
+    <mat-select [(value)]="chosenCategory" name="category" ngModel required>
+      <mat-option *ngFor="let category of this.categories$ | async"
+                  value="{{category}}"
+                  (onSelectionChange)="selectionChange($event)">{{category}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="chosenCategory === 'business'" appearance="fill">
+    <mat-label>Subcategory</mat-label>
+    <mat-select [(value)]="chosenSubcategory" name="subCategory" ngModel>
+      <mat-option *ngFor="let subcategory of this.subcategories$ | async" value="{{subcategory}}">{{subcategory}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="chosenCategory === 'other'" appearance="fill">
+    <mat-label>Subcategory</mat-label>
+    <mat-chip-grid #chipGrid aria-label="Subcategory">
+      <mat-chip-row *ngFor="let category of this.subcategories$ | async">
+        {{category}}
+      </mat-chip-row>
+    </mat-chip-grid>
+    <input placeholder="New subcategory..." #fruitInput [formControl]="subcategoryCtrl"
+           [matChipInputFor]="chipGrid" [matAutocomplete]="auto"
+           (matChipInputTokenEnd)="createNewSubCategory($event)"/>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="setSelectedSubCategory($event.option.value)">
+      <mat-option *ngFor="let category of filteredSubCategories | async" [value]="category">
+        {{category}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <button mat-raised-button >Create</button>
+</form>

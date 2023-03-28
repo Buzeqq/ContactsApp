@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable} from "rxjs";
+import {BehaviorSubject, Observable, tap} from "rxjs";
 import {Contact} from "./contacts/contact";
 import {HttpClient} from "@angular/common/http";
 import {ContactDetail} from "./contact-detail/contact-detail";
@@ -23,6 +23,30 @@ export class ContactsService {
 
   getContact(id: number): Observable<ContactDetail> {
     return this.http.get<ContactDetail>("/api/contacts/" + id);
+  }
+
+  createContact(contact: ContactDetail): Observable<never> {
+    if (contact.subCategory === undefined) {
+      contact.subCategory = "";
+    }
+
+    return this.http.post<never>("/api/contacts", contact).pipe(
+      tap(_ => {
+        this.getContacts().subscribe(contacts => {
+          this.contacts$.next(contacts);
+        })
+      })
+    );
+  }
+
+  deleteContact(contactId: number): Observable<never> {
+    return this.http.delete<never>("/api/contacts/" + contactId).pipe(
+      tap(_ => {
+        this.getContacts().subscribe(contacts => {
+          this.contacts$.next(contacts);
+        })
+      })
+    );
   }
 
   get contacts() {

@@ -1,5 +1,23 @@
-<ul>
-  <li *ngFor="let contact of contacts$ | async">
-    <a routerLink="/contact" [queryParams]="{ id: contact.id }">{{contact.name}} {{contact.surname}} {{contact.email}}</a>
-  </li>
-</ul>
+<h2>Contacts</h2>
+
+<ng-container *ngIf="contacts$ | async as contacts; else loading">
+  <mat-list>
+    <div *ngFor="let contact of contacts">
+      <mat-list-item matRipple routerLink="/contact" [queryParams]="{ id: contact.id }">
+        <span matListItemTitle>{{contact.name}} {{contact.surname}}</span>
+        <span matListItemLine>{{contact.email}}</span>
+      </mat-list-item>
+      <button mat-raised-button color="warn" (click)="delete(contact.id)" *ngIf="(authService.user | async)?.isLogged">Delete</button>
+    </div>
+  </mat-list>
+</ng-container>
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>
+
+
+<ng-container *ngIf="(authService.user | async)?.isLogged">
+  <app-contact-create></app-contact-create>
+</ng-container>
+

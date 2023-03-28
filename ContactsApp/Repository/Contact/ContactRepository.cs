@@ -23,6 +23,7 @@ public sealed class ContactRepository : IContactRepository, IDisposable
             .Where(contact => contact.Id == contactId)
             .Select(contact => new Contact
             {
+                Id = contact.Id,
                 Name = contact.Name, 
                 Surname = contact.Surname, 
                 Email = contact.Email, 
@@ -36,15 +37,7 @@ public sealed class ContactRepository : IContactRepository, IDisposable
     public Contact? CreateContact(Contact contact)
     {
         var newContact = _dbContext.Contacts.Add(contact);
-        try
-        {
-            _dbContext.SaveChanges();
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            return null;
-        }
+        _dbContext.SaveChanges();
 
         return newContact.Entity;
     }

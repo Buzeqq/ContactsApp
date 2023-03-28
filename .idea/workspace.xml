@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="728454b3-bbe2-4ba0-ba12-7bb29e5ead0a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/ContactsApp/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Controllers/CategoryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/Controllers/ContactsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Controllers/ContactsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/Dto/Contact/PostContactsDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Dto/Contact/PostContactsDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/Repository/Category/CategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Repository/Category/CategoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/Repository/Category/ICategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Repository/Category/ICategoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/Repository/Contact/ContactRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Repository/Contact/ContactRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/Services/Category/CategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Services/Category/CategoryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/Services/Category/ICategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/Services/Category/ICategoryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/contact-detail/contact-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/contact-detail/contact-detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/contacts.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/contacts.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/contacts/contacts.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/contacts/contacts.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/contacts/contacts.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/contacts/contacts.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/login/login.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/register/register.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/register/register.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/app/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/app/register/register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContactsApp/client/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/ContactsApp/client/src/styles.css" afterDir="false" />
+    </list>
+    <list id="c9dc36a6-8e74-48b0-b336-46889a43e5bc" name="Changes by mate" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Neu5XmqTlLBk8HbLCJN4DZEDc3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/buzeqq/RiderProjects/ContactsApp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/home/buzeqq/RiderProjects/ContactsApp/ContactsApp/client/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="728454b3-bbe2-4ba0-ba12-7bb29e5ead0a" name="Changes" comment="" />
+      <created>1680036687216</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680036687216</updated>
+      <workItem from="1680036688148" duration="3051000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

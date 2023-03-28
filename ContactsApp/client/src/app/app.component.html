@@ -1,18 +1,14 @@
 <nav>
-  <ul>
-    <li><a routerLink="/contacts">Contacts</a></li>
+    <button mat-raised-button color="primary" routerLink="/contacts">Contacts</button>
     <ng-container *ngIf="!((this.user$ | async)?.isLogged); else logoutTmpl">
-      <li><a routerLink="/login">Login</a></li>
-      <li><a routerLink="/register">Register</a></li>
+      <button mat-raised-button color="primary" routerLink="/login">Login</button>
+      <button mat-raised-button color="primary" routerLink="/register">Register</button>
     </ng-container>
-  </ul>
 </nav>
 
 <ng-template #logoutTmpl>
-  <p>{{(this.user$ | async)?.username}}</p>
-  <button (click)="logout()">Logout</button>
+  <h3>User: {{(this.user$ | async)?.username}}</h3>
+  <button mat-raised-button color="secondary" (click)="logout()">Logout</button>
 </ng-template>
-
-<ng-template #loading>Loading...</ng-template>
 
 <router-outlet></router-outlet>
