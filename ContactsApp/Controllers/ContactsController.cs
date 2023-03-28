@@ -1,6 +1,7 @@
 using ContactsApp.Dto.Contact;
 using ContactsApp.Models;
 using ContactsApp.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContactsApp.Controllers;
@@ -43,6 +44,7 @@ public class ContactsController
         return Results.Created("/api/contacts", newContact.Id);
     }
     
+    [Authorize]
     [HttpGet("/api/contacts/{id:int}")]
     public IResult GetContact(int id)
     {

@@ -13,7 +13,6 @@ export class ContactsService {
 
   constructor(private readonly http: HttpClient) {
     this.getContacts().subscribe(contacts => {
-      console.log(contacts);
       this.contacts$.next(contacts);
     });
   }
