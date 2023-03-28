@@ -1,4 +1,4 @@
-docker run -e POSTGRES_PASSWORD=adminadmin -e POSTGRES_DB=contacts -p 5432:5432 -d postgres:latest
+docker run --name milosz_chojnacki -e POSTGRES_PASSWORD=adminadmin -e POSTGRES_DB=contacts -p 5432:5432 -d postgres:latest
 cd ContactsApp
 dotnet ef database update
 cd client
