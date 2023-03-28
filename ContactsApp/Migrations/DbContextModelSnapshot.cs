@@ -3,20 +3,18 @@ using System;
 using ContactsApp.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
+using DbContext = ContactsApp.Database.DbContext;
 
 #nullable disable
 
 namespace ContactsApp.Migrations
 {
-    [DbContext(typeof(Database.Database))]
-    [Migration("20230324140431_identity")]
-    partial class identity
+    [DbContext(typeof(DbContext))]
+    partial class DbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,6 +22,118 @@ namespace ContactsApp.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("ContactsApp.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("SubCategoryName")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "private"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "other"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "business",
+                            SubCategoryName = "boss"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "business",
+                            SubCategoryName = "manager"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "business",
+                            SubCategoryName = "intern"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "business",
+                            SubCategoryName = "team leader"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "business",
+                            SubCategoryName = "hr"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "business",
+                            SubCategoryName = "secretary"
+                        });
+                });
+
+            modelBuilder.Entity("ContactsApp.Models.Contact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("BirthDay")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.ToTable("Contacts");
+                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -221,6 +331,17 @@ namespace ContactsApp.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("ContactsApp.Models.Contact", b =>
+                {
+                    b.HasOne("ContactsApp.Models.Category", "Category")
+                        .WithMany("Contacts")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -270,6 +391,11 @@ namespace ContactsApp.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ContactsApp.Models.Category", b =>
+                {
+                    b.Navigation("Contacts");
                 });
 #pragma warning restore 612, 618
         }

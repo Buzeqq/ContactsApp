@@ -8,12 +8,17 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {AuthenticationService} from "./authentication.service";
 import {FormsModule} from "@angular/forms";
+import { ContactsComponent } from './contacts/contacts.component';
+import {ContactsService} from "./contacts.service";
+import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ContactsComponent,
+    ContactDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +26,7 @@ import {FormsModule} from "@angular/forms";
     AppRoutingModule,
     FormsModule
   ],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService, ContactsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -29,25 +29,25 @@ export class AuthenticationService {
       }),
     );
   }
-  login(loginForm: LoginForm): Observable<any> {
-    return this.http.post<any>("/api/login", loginForm, { withCredentials: true }).pipe(
+  login(loginForm: LoginForm): Observable<never> {
+    return this.http.post<never>("/api/login", loginForm, { withCredentials: true }).pipe(
       tap(_ => {
         this.loadUser().subscribe(user => this.user$.next(user));
       })
     );
   }
-  register(registerForm: RegisterForm): Observable<any> {
-    return this.http.post<any>("/api/register", registerForm, { withCredentials: true }).pipe(
+  register(registerForm: RegisterForm): Observable<never> {
+    return this.http.post<never>("/api/register", registerForm, { withCredentials: true }).pipe(
       tap(_ => this.loadUser())
     );
   }
 
-  logout(): Observable<any> {
+  logout(): Observable<never> {
     this.user$.next({
       username: "",
       isLogged: false
     })
-    return this.http.get<any>("/api/logout");
+    return this.http.get<never>("/api/logout");
   }
 
   get user() {

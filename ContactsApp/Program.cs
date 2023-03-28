@@ -1,25 +1,30 @@
-using ContactsApp.Database;
+using ContactsApp.Repository;
+using ContactsApp.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using DbContext = ContactsApp.Database.DbContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<Database>(c => c.UseNpgsql(
+builder.Services.AddDbContext<DbContext>(c => c.UseNpgsql(
     builder.Configuration.GetConnectionString("Default")
     ));
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<Database>()
+    .AddEntityFrameworkStores<DbContext>()
     .AddDefaultTokenProviders();
 
 builder.Services.AddAuthorization();
+
+builder.Services.AddScoped<IContactRepository, ContactRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IContactService, ContactService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var app = builder.Build();
 
